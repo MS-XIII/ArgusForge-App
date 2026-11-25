@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0a0b0e">
+<title>Argus Forge</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ===================== SPLASH ===================== -->
+<div id="splash" class="splash">
+  <canvas id="splashCanvas"></canvas>
+  <div class="splash-content">
+    <div class="splash-icon-wrap">
+      <div class="splash-glow"></div>
+      <img src="logo.png" alt="ARGUS FORGE" class="splash-icon" onerror="this.style.display='none'">
+    </div>
+    <div class="splash-title">ARGUS FORGE</div>
+    <div class="splash-bar"><div class="splash-bar-fill" id="splashProgress"></div></div>
+    <div class="splash-status" id="splashStatus">Loading…</div>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app" class="app" hidden>
+
+  <div class="accent-bar"></div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="brand-row">
+        <span class="brand-bar"></span>
+        <span class="brand-title">ARGUS FORGE</span>
+      </div>
+      <div class="brand-sub">red team toolkit // operator console</div>
+    </div>
+    <div class="header-right">
+      <div class="pill">
+        <span class="dot" id="bruceDot"></span>
+        <span class="pill-text" id="bruceText">bruce: unchecked</span>
+      </div>
+      <button class="btn btn-outline" id="settingsBtn">SETTINGS</button>
+    </div>
+  </header>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tab active" data-tab="portal"><span>EVIL PORTAL</span></button>
+    <button class="tab" data-tab="badusb"><span>BAD USB</span></button>
+    <button class="tab" data-tab="library"><span>LIBRARY</span></button>
+    <button class="tab" data-tab="store"><span>STORE</span></button>
+  </nav>
+
+  <main class="content" id="content">
+
+    <!-- ============ EVIL PORTAL ============ -->
+    <section class="tab-panel forge active" id="tab-portal" data-tab-key="portal">
+      <div class="forge-head">
+        <div class="forge-title">// EVIL PORTAL</div>
+        <div class="forge-sub">describe the captive portal you want - login page, capture backend, deployment notes</div>
+      </div>
+
+      <div class="card prompt-card">
+        <div class="card-head">
+          <span class="card-label accent">// PROMPT</span>
+          <div class="card-actions">
+            <button class="btn btn-ghost" data-action="clear">CLEAR</button>
+            <button class="btn btn-primary" data-action="generate">GENERATE</button>
+          </div>
+        </div>
+        <div class="prompt-body">
+          <span class="accent-edge"></span>
+          <textarea class="prompt" data-prompt spellcheck="false" autocapitalize="off" autocorrect="off"
+            placeholder="e.g. a Google sign-in captive portal with a Python Flask backend that logs credentials to a CSV, mobile-responsive, dark theme"></textarea>
+        </div>
+      </div>
+
+      <div class="card output-card">
+        <div class="card-head">
+          <span class="card-label good">// OUTPUT</span>
+          <span class="status">
+            <span class="dot" data-status-dot></span>
+            <span class="status-text" data-status>ready</span>
+          </span>
+          <div class="card-actions">
+            <button class="btn btn-ghost" data-action="copy">COPY</button>
+            <button class="btn btn-outline" data-action="download">DOWNLOAD</button>
+            <button class="btn btn-outline" data-action="vault">SAVE TO VAULT</button>
+            <button class="btn btn-outline" data-action="bruce">SEND // BRUCE</button>
+          </div>
+        </div>
+        <div class="output-body">
+          <span class="accent-edge good"></span>
+          <textarea class="output" data-output readonly spellcheck="false" wrap="soft"></textarea>
+        </div>
+      </div>
+
+      <div class="card vault-card">
+        <div class="card-head">
+          <span class="card-label">// MY VAULT</span>
+          <span class="count" data-vault-count>0 items</span>
+        </div>
+        <div class="vault-list" data-vault-list></div>
+      </div>
+    </section>
+
+    <!-- ============ BAD USB ============ -->
+    <section class="tab-panel forge" id="tab-badusb" data-tab-key="badusb">
+      <div class="forge-head">
+        <div class="forge-title">// BAD USB</div>
+        <div class="forge-sub">describe the payload - target OS, execution chain, what it should do</div>
+      </div>
+
+      <div class="card prompt-card">
+        <div class="card-head">
+          <span class="card-label accent">// PROMPT</span>
+          <div class="card-actions">
+            <button class="btn btn-ghost" data-action="clear">CLEAR</button>
+            <button class="btn btn-primary" data-action="generate">GENERATE</button>
+          </div>
+        </div>
+        <div class="prompt-body">
+          <span class="accent-edge"></span>
+          <textarea class="prompt" data-prompt spellcheck="false" autocapitalize="off" autocorrect="off"
+            placeholder="e.g. a DuckyScript for Windows 11 that opens PowerShell, downloads a script from a URL, runs it hidden, and exits cleanly"></textarea>
+        </div>
+      </div>
+
+      <div class="card output-card">
+        <div class="card-head">
+          <span class="card-label good">// OUTPUT</span>
+          <span class="status">
+            <span class="dot" data-status-dot></span>
+            <span class="status-text" data-status>ready</span>
+          </span>
+          <div class="card-actions">
+            <button class="btn btn-ghost" data-action="copy">COPY</button>
+            <button class="btn btn-outline" data-action="download">DOWNLOAD</button>
+            <button class="btn btn-outline" data-action="vault">SAVE TO VAULT</button>
+            <button class="btn btn-outline" data-action="bruce">SEND // BRUCE</button>
+          </div>
+        </div>
+        <div class="output-body">
+          <span class="accent-edge good"></span>
+          <textarea class="output" data-output readonly spellcheck="false" wrap="soft"></textarea>
+        </div>
+      </div>
+
+      <div class="card vault-card">
+        <div class="card-head">
+          <span class="card-label">// MY VAULT</span>
+          <span class="count" data-vault-count>0 items</span>
+        </div>
+        <div class="vault-list" data-vault-list></div>
+      </div>
+    </section>
+
+    <!-- ============ LIBRARY ============ -->
+    <section class="tab-panel" id="tab-library">
+      <div class="forge-head">
+        <div class="forge-title">// LIBRARY</div>
+        <div class="forge-sub">scrape payloads from github, download to folder or send to bruce</div>
+      </div>
+
+      <div class="lib-toolbar">
+        <button class="btn btn-primary" id="libRefresh">REFRESH</button>
+        <span class="lib-status" id="libStatus">not loaded</span>
+        <span class="lib-search-label">repo search:</span>
+        <input class="input lib-search" id="libSearch" placeholder="repo search..." spellcheck="false" autocapitalize="off">
+        <button class="btn btn-outline" id="libSearchBtn">ADD</button>
+      </div>
+
+      <div class="lib-panes">
+        <div class="card pane" data-pane="portal">
+          <div class="card-head">
+            <span class="card-label accent">// EVIL PORTALS</span>
+            <span class="count" data-count>0 items</span>
+          </div>
+          <div class="pane-filter"><input class="input" data-filter placeholder="filter..." spellcheck="false"></div>
+          <div class="pane-list" data-list></div>
+        </div>
+        <div class="card pane" data-pane="badusb">
+          <div class="card-head">
+            <span class="card-label good">// BAD USB SCRIPTS</span>
+            <span class="count" data-count>0 items</span>
+          </div>
+          <div class="pane-filter"><input class="input" data-filter placeholder="filter..." spellcheck="false"></div>
+          <div class="pane-list" data-list></div>
+        </div>
+      </div>
+
+      <div class="lib-bottom">
+        <button class="btn btn-primary" id="libDownload">DOWNLOAD SELECTED</button>
+        <button class="btn btn-outline" id="libSendBruce">SEND TO BRUCE</button>
+        <span class="lib-dl-status" id="libDlStatus"></span>
+      </div>
+    </section>
+
+    <!-- ============ STORE ============ -->
+    <section class="tab-panel" id="tab-store">
+      <div class="forge-head">
+        <div class="forge-title">// STORE</div>
+        <div class="forge-sub">apps &amp; themes from bruce.computer/appstore, installed to your Bruce device</div>
+      </div>
+
+      <div class="store-subtabs">
+        <button class="store-subtab active" data-store-tab="apps">APPS</button>
+        <button class="store-subtab" data-store-tab="themes">THEMES</button>
+      </div>
+
+      <div class="store-toolbar">
+        <button class="btn btn-primary" id="storeRefresh">REFRESH</button>
+        <span class="store-status" id="storeStatus">not loaded</span>
+        <button class="btn btn-ghost" id="storeRetry" hidden>RETRY</button>
+      </div>
+
+      <div class="store-grid" id="storeApps"></div>
+      <div class="store-grid" id="storeThemes" hidden></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===================== SETTINGS MODAL ===================== -->
+<div class="modal-overlay" id="settingsModal" hidden>
+  <div class="modal">
+    <div class="modal-accent"></div>
+    <div class="modal-scroll">
+      <div class="modal-title">// SETTINGS</div>
+      <div class="modal-sub">api credentials, github token, bruce target</div>
+
+      <div class="s-card">
+        <div class="s-card-title">// AI PROVIDER</div>
+        <div class="field"><label>API KEY</label><input class="input" id="cfg_api_key" type="password" spellcheck="false" autocapitalize="off"></div>
+        <div class="field"><label>BASE URL</label><input class="input" id="cfg_base_url" spellcheck="false" autocapitalize="off"></div>
+        <div class="field"><label>MODEL</label><input class="input" id="cfg_model" spellcheck="false" autocapitalize="off"></div>
+        <div class="field"><label>GITHUB</label><input class="input" id="cfg_github_token" type="password" spellcheck="false" autocapitalize="off"></div>
+      </div>
+
+      <div class="s-card">
+        <div class="s-card-title">// BRUCE FIRMWARE</div>
+        <div class="field"><label>HOST</label><input class="input" id="cfg_bruce_host" spellcheck="false" autocapitalize="off"></div>
+        <div class="field"><label>USER</label><input class="input" id="cfg_bruce_user" spellcheck="false" autocapitalize="off"></div>
+        <div class="field"><label>PASS</label><input class="input" id="cfg_bruce_pass" type="password" spellcheck="false" autocapitalize="off"></div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="settingsCancel">CANCEL</button>
+      <button class="btn btn-primary" id="settingsSave">SAVE</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

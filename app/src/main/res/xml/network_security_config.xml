@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Deploy targets (Bruce devices at http://bruce.local and local
+     llama.cpp/Ollama servers) speak plain HTTP, so cleartext must be
+     permitted app-wide. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

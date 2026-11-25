@@ -1,0 +1,4 @@
+// Top-level build file. AGP 8.6.0 + Gradle 8.8 (both cached locally).
+plugins {
+    id 'com.android.application' version '8.6.0' apply false
+}
